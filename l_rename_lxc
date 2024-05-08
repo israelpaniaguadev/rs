@@ -1,0 +1,3 @@
+#!/bin/bash
+lxc-copy -n $1 -N $2; lxc-destroy $1;
+echo "...renamed $1 to $2";

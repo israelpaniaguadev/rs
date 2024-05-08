@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -fR ~/rsrc;
+git clone https://github.com/israelpaniaguadev/rsrc;
+chmod -R +x ~/rsrc;
+echo "...end";

@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "lxc.start.auto = 1" >> /var/lib/lxc/$1/config

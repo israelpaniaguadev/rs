@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "...creating container for debian";
+lxc-create -t download -n $1 -- -d debian -r  bookworm -a amd64;
+echo "...end";

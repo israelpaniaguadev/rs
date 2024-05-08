@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "...begin configurations";
+HH=/home/$1;
+cd $HH;
+mkdir -p .config/lxc/;
+head -4 /etc/lxc/default.conf >> $HH/.config/lxc/default.conf;
+echo "lxc.idmap = u 0 99999 65536" >> $HH/.config/lxc/default.conf;
+echo "lxc.idmap = g 0 99999 65536" >> $HH/.config/lxc/default.conf;
+echo "...folder config created";
+mkdir -p $HH/.cache/lxc/download;
+cp  -R /var/cache/lxc/download/ $HH/.cache/lxc/;
+chown -R $1:$1 $HH/.cache;
+chmod -R 775 $HH/.cache;
+echo "...cache download created";
+chmod -R 775 $HH/.config;
+chown -R $1:$1 $HH/.config;
+echo "...change mode to 775";
+echo "$1 veth lxcbr0 50" > /etc/lxc/lxc-usernet;
+echo "Need to modify idmap in default.conf";
+echo "...end";
