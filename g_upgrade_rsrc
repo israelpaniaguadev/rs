@@ -2,4 +2,4 @@
 rm -fR ~/rsrc;
 git clone https://github.com/israelpaniaguadev/rsrc;
 chmod -R +x ~/rsrc;
-echo "...end";
+echo "\033[1;33m...end\033[0m";

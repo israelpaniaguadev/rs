@@ -1,4 +1,0 @@
-#!/bin/bash
-apt update;
-echo "BEGIN INSTALLING PACKAGES...";
-apt -y install lxc iptables apparmor debootstrap dirmngr gnupg libpam-cgfs lxc-templates lxcfs openssl rsync uidmap wget btrfs-progs lvm2 python3-lxc libvirt0 bridge-utils systemd ufw ssh curl sudo;

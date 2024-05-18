@@ -1,3 +1,0 @@
-#!/bin/bash
-debootstrap --arch=amd64 --include="locales ufw iproute2 dnsutils iputils-ping sudo nano wget curl git" stable ~/rootfs0 http://httpredir.debian.org/debian ;
-echo "...downloaded rootfs0";

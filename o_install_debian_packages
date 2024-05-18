@@ -1,4 +1,0 @@
-#!/bin/bash
-apt update;
-apt -y install locales wget systemd ufw ssh curl sudo git less tree nano iproute2 iputils-ping;
-echo "...end";
