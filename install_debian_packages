@@ -1,5 +1,6 @@
 #!/bin/bash
 apt update;
 echo $'\033[1;33mbegin install packages for debian host\033[0m';
-apt -y install ufw ssh curl sudo dos2unix nano tree wget less diffutils;
+apt -y install ufw ssh curl sudo dos2unix nano tree wget less git diffutils;
+apt -y upgrade;
 echo $'\033[1;33mend\033[0m'
