@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "...creating container for debian";
+echo $'\033[1;33m...creating container for debian\033[0m';
 lxc-create -t download -n $1 -- -d debian -r  bookworm -a amd64;
-echo "...end";
+echo '\033[1;33m...end\033[0m';
