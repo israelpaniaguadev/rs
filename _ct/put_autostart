@@ -1,2 +1,8 @@
 #!/bin/bash
-echo '\033[1;33mlxc.start.auto = 1\033[0m' >> /var/lib/lxc/$1/config
+if [ -z "$1"  ]
+   then
+   echo 'No input parameter'
+   exit  1
+fi
+echo 'lxc.start.auto = 1' >> /var/lib/lxc/$1/config
+exit 0
