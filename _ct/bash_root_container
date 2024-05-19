@@ -1,3 +1,4 @@
 #!/bin/bash
 echo "PS1='\[\033[1;36m\]@\h \W\[\033[0m\]# '" >> ~/.bashrc
 source ~/.bashrc
+/bin/bash
