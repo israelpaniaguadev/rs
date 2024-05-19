@@ -1,5 +1,6 @@
 #!/bin/bash
 rm -fR ~/rs;
+echo $'\033[1;33m...rs/ deleted\033[0m'
 git clone https://github.com/israelpaniaguadev/rs;
 chmod -R +x ~/rs;
-echo $'\033[1;33m...end\033[0m'
+echo $'\033[1;33m...git; +x;\n ...end\033[0m'
