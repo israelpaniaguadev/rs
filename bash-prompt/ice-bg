@@ -1,0 +1,56 @@
+# last boot
+uptime -p|more
+# limit for work directory
+PROMPT_DIRTRIM=1
+# resume
+function _info
+{
+# count the numbers of files
+f=$(ls -al | grep "^-" | wc -l | tr -d " ")
+# h=$(ls -l -d .* | grep "^-" | wc -l | tr -d " ")
+# count the numbers of executables files
+x=$(ls -l | grep ^-..x | wc -l | tr -d " ")
+# count the numbers of directories
+d=$(ls -l | grep "^d" | wc -l | tr -d " ")
+# display
+wstat=" ${d}d ${f}f ${x}x"
+}
+function _curr_size
+{
+# query the size of the current directory
+  echo "current size: $(du -hs|awk '{print $1}')"
+}
+
+function _os_stat 
+{
+# query how time is running the os
+  echo "      up: `uptime | awk -F, '{sub(".*up ",x,$1);print $1}'`"
+# processes
+  echo "    proc: `ps ax | wc -l | tr -d ' '`"
+# memory used
+  echo "ram used: `free -mh | awk '/Mem/{print $3}'`"
+}
+#
+# unicode characters
+UA=$'\u2593'$'\u2592'$'\u2591'
+UB=$'\u25b6'
+# colors
+C1=$'\e[38;5;27;48;5;45m'
+C2=$'\e[38;5;45;48;5;159m'
+C3=$'\e[38;5;159m'
+CA=$'\e[38;5;33m'
+CB=$'\e[34;1m'
+CT=$'\e[38;5;231;48;5;27m'
+CH=$'\e[38;5;235;48;5;45m'
+CW=$'\e[38;5;242;48;5;159m'
+
+
+NC=$'\e[0m'
+# function
+function _display
+{
+  PS1='${CT}\D{%H%M} ${C1}${UB}${CH} \h ${C2}${UB}${CW} \W${wstat} ${CB}\# ${NC}${C3}${UA}${CA}\n\$ ${NC}'
+}
+# execute the commands above
+PROMPT_COMMAND='_info;_display;'
+# end

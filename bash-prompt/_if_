@@ -1,0 +1,5 @@
+#
+if [ -f ~/.bash-prompt/owl ]; then
+   . ~/.bash-prompt/owl
+fi
+#
